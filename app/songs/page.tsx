@@ -4,11 +4,11 @@ export default function SongPage() {
   return (
     <div className="m-10 text-center">
       <span className="text-lg">
-        Click a title on the left to view detail 🚀
+        横浜DeNAベイスターズを応援しよう！ 🚀
       </span>
-      <div className="my-5 flex justify-center">
+      {/* <div className="my-5 flex justify-center">
         <RouterBtn />
-      </div>
+      </div> */}
     </div>
   )
 }

@@ -1,7 +1,16 @@
 'use client'
 import { useRouter } from 'next/navigation'
 
-export default function RefreshBtn() {
+type Song =  {
+  start: number | null,
+  end: number | null,
+}
+
+interface RefreshBtnProps {
+  song: Song,
+}
+
+export default function RefreshBtn({song}: RefreshBtnProps) {
   const router = useRouter()
   return (
     <button
@@ -10,7 +19,7 @@ export default function RefreshBtn() {
         router.refresh()
       }}
     >
-      Refresh current route
+      {song.start}
     </button>
   )
 }

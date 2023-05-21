@@ -4,6 +4,8 @@ import { format } from 'date-fns'
 import { ArrowUturnLeftIcon } from '@heroicons/react/24/solid'
 import type { Database } from '../../../database.types'
 
+import RefreshBtn from '../../components/refresh-btn'
+
 type Song = Database['public']['Tables']['songs']['Row']
 
 type PageProps = {
@@ -48,6 +50,7 @@ export default async function SongDetailPage({ params }: PageProps) {
       <Link href={`/songs`}>
         <ArrowUturnLeftIcon className="mt-3 h-6 w-6 cursor-pointer text-blue-500" />
       </Link>
+      <RefreshBtn song={song}/>
     </div>
   )
 }

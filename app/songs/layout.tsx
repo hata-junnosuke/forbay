@@ -11,9 +11,9 @@ export default function SongLayout({
       <aside className={`h-[calc(100vh-56px)] w-1/4 bg-gray-200 p-2`}>
         {/*@ts-ignore*/}
         <SongListStatic />
-        <div className="flex justify-center">
+        {/* <div className="flex justify-center">
           <RefreshBtn />
-        </div>
+        </div> */}
       </aside>
       <main className="flex flex-1 justify-center">{children}</main>
     </section>

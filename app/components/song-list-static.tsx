@@ -24,7 +24,7 @@ export default async function SongListStatic() {
   return (
     <div className="p-4 ">
       <p className="mb-4 pb-3 text-xl font-medium underline underline-offset-4">
-        Songs
+        応援歌一覧
       </p>
       <ul>
         {songs?.map((song) => (
