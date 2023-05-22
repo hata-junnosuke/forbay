@@ -4,7 +4,7 @@ import { format } from 'date-fns'
 import { ArrowUturnLeftIcon } from '@heroicons/react/24/solid'
 import type { Database } from '../../../database.types'
 
-import RefreshBtn from '../../components/refresh-btn'
+import Youtube from '../../components/youtube'
 
 type Song = Database['public']['Tables']['songs']['Row']
 
@@ -38,6 +38,7 @@ export default async function SongDetailPage({ params }: PageProps) {
   if (!song) return notFound()
   return (
     <div className="mt-16 p-8">
+      <Youtube song={song}/>
       <p>
         <strong className="mr-3">Task ID:</strong> {song.id}
       </p>
@@ -50,7 +51,6 @@ export default async function SongDetailPage({ params }: PageProps) {
       <Link href={`/songs`}>
         <ArrowUturnLeftIcon className="mt-3 h-6 w-6 cursor-pointer text-blue-500" />
       </Link>
-      <RefreshBtn song={song}/>
     </div>
   )
 }
