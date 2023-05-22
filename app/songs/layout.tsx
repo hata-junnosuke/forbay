@@ -1,5 +1,4 @@
 import SongListStatic from '../components/song-list-static'
-import RefreshBtn from '../components/refresh-btn'
 
 export default function SongLayout({
   children,
