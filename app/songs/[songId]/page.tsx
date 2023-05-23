@@ -45,7 +45,7 @@ export default async function SongDetailPage({ params }: PageProps) {
         <strong className="mr-3">Title:</strong> {song.name}
       </p>
       <p>
-        <strong className="mr-3">Content:</strong> {song.explanation}
+        <strong className="mr-3">Comment:</strong> {song.explanation}
       </p>
       <p>
         <strong className="mr-3">URL:</strong> {song.fight_song}
