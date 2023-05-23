@@ -7,7 +7,7 @@ export default function SongLayout({
 }) {
   return (
     <section className="flex">
-      <aside className={`h-[calc(100vh-56px)] w-1/4 bg-gray-200 p-2`}>
+      <aside className={`h-[calc(100vh-56px)] w-1/4 bg-gray-200  text-blue-500 p-2`}>
         {/*@ts-ignore*/}
         <SongListStatic />
         {/* <div className="flex justify-center">

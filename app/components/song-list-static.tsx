@@ -8,9 +8,9 @@ async function fetchSongs() {
     headers: new Headers({
       apikey: process.env.apikey as string,
     }),
-    //cache: 'no-store',
+    cache: 'no-store',
     // サーバー側でのキャッシュを無効化する
-    cache: 'force-cache',
+    // cache: 'force-cache',
   })
   if (!res.ok) {
     throw new Error('Failed to fetch data in server')
@@ -23,7 +23,7 @@ export default async function SongListStatic() {
   const songs = await fetchSongs()
   return (
     <div className="p-4 ">
-      <p className="mb-4 pb-3 text-xl font-medium underline underline-offset-4">
+      <p className="mb-4 pb-3 text-xl font-medium underline underline-offset-4  text-black">
         応援歌一覧
       </p>
       <ul>

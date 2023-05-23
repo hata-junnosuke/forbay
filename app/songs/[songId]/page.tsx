@@ -15,7 +15,6 @@ type PageProps = {
 }
 
 async function fetchSong(songId: string) {
-  console.log(songId)
   const res = await fetch(
     `${process.env.url}/rest/v1/songs?id=eq.${songId}&select=*`,
     {
@@ -35,20 +34,21 @@ async function fetchSong(songId: string) {
 }
 
 export default async function SongDetailPage({ params }: PageProps) {
-  console.log(params)
   const song = await fetchSong(params.songId)
   if (!song) return notFound()
   return (
-    <div className="mt-16 p-8">
-      <Youtube song={song}/>
-      <p>
-        <strong className="mr-3">Task ID:</strong> {song.id}
-      </p>
-      <p>
+    <div className="mt-16 p-8 text-center flex flex-col items-center">
+      <div>
+        <Youtube song={song}/>
+      </div>
+      <p className="text-center mt-16">
         <strong className="mr-3">Title:</strong> {song.name}
       </p>
       <p>
         <strong className="mr-3">Content:</strong> {song.explanation}
+      </p>
+      <p>
+        <strong className="mr-3">URL:</strong> {song.fight_song}
       </p>
       <Link href={`/songs`}>
         <ArrowUturnLeftIcon className="mt-3 h-6 w-6 cursor-pointer text-blue-500" />
@@ -56,6 +56,7 @@ export default async function SongDetailPage({ params }: PageProps) {
     </div>
   )
 }
+// 静的に扱う場合には、getStaticPathsとgetStaticPropsを使う
 // export async function generateStaticParams() {
 //   const res = await fetch(`${process.env.url}/rest/v1/songs?select=*`, {
 //     headers: new Headers({
