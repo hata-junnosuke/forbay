@@ -17,7 +17,7 @@ type PageProps = {
 async function fetchSong(songId: string) {
   console.log(songId)
   const res = await fetch(
-    `${process.env.url}/rest/v1/songs?id=eq.1&select=*`,
+    `${process.env.url}/rest/v1/songs?id=eq.${songId}&select=*`,
     {
       headers: new Headers({
         apikey: process.env.apikey as string,
