@@ -21,9 +21,9 @@ async function fetchSong(songId: string) {
       headers: new Headers({
         apikey: process.env.apikey as string,
       }),
-      //cache: 'no-store',
+      cache: 'no-store',
       // 13.4以降必要。サーバー側でのキャッシュを無効化する
-      cache: 'force-cache',
+      // cache: 'force-cache',
     }
   )
   //   if (!res.ok) {
@@ -54,15 +54,15 @@ export default async function SongDetailPage({ params }: PageProps) {
     </div>
   )
 }
-export async function generateStaticParams() {
-  const res = await fetch(`${process.env.url}/rest/v1/songs?select=*`, {
-    headers: new Headers({
-      apikey: process.env.apikey as string,
-    }),
-  })
-  const songs: Song[] = await res.json()
+// export async function generateStaticParams() {
+//   const res = await fetch(`${process.env.url}/rest/v1/songs?select=*`, {
+//     headers: new Headers({
+//       apikey: process.env.apikey as string,
+//     }),
+//   })
+//   const songs: Song[] = await res.json()
 
-  return songs.map((song) => ({
-    songId: song.id.toString(),
-  }))
-}
+//   return songs.map((song) => ({
+//     songId: song.id.toString(),
+//   }))
+// }
