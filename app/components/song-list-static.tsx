@@ -30,7 +30,7 @@ export default async function SongListStatic() {
         {songs?.map((song) => (
           <li key={song.id} className="my-1 text-base">
             {/* prefetchは13.4以降つけるようになった */}
-            <Link prefetch={false} href={`/songs/${song.id}`}>
+            <Link  href={`/songs/${song.id}`}>
               {song.name}
             </Link>
           </li>
