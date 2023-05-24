@@ -3,6 +3,8 @@ import { notFound } from 'next/navigation'
 import { format } from 'date-fns'
 import { ArrowUturnLeftIcon } from '@heroicons/react/24/solid'
 import type { Database } from '../../../database.types'
+import { Suspense } from 'react'
+import Spinner from '../../components/spinner'
 
 import Youtube from '../../components/youtube'
 
@@ -39,7 +41,9 @@ export default async function SongDetailPage({ params }: PageProps) {
   return (
     <div className="mt-16 p-8 text-center flex flex-col items-center">
       <div>
-        <Youtube song={song}/>
+        <Suspense fallback={<Spinner color="border-green-500" />}>
+          <Youtube song={song}/>
+        </Suspense>
       </div>
       <p className="text-center mt-16">
         <strong className="mr-3">Title:</strong> {song.name}

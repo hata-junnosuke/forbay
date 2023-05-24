@@ -12,7 +12,6 @@ interface RefreshBtnProps {
 }
 
 function YoutubePlayer({song}: RefreshBtnProps){
-  console.log(song);
   const opts = {
     playerVars: {
       start: song.start, // 再生開始時間（秒）
